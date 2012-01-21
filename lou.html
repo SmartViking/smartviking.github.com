@@ -1,0 +1,3363 @@
+<html>
+<head>
+
+<style>
+body {
+    background-color:black;
+}
+p {
+    color:white;
+}
+td {
+    color:white;
+}
+h2 {
+    color:white;
+}
+</style>
+
+</head>
+<body>
+<script type="text/javascript">
+
+var town_hall = (<r><![CDATA[
+<h2>Town Hall</h2>
+	<table border="1" width="900"><tr><td>Level</td>
+			<td>Total Building Slots</td>
+
+			<td>Wood Production/h</td>
+			<td>Storage</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Armies</td>
+
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>10</td>
+			<td>300</td>
+			<td>5,000</td>
+			<td>-</td>
+
+			<td>-</td>
+			<td>-</td>
+			<td>5</td>
+			<td>3</td>
+		</tr><tr><td>2</td>
+			<td>20</td>
+
+			<td>300</td>
+			<td>7,000</td>
+			<td>200</td>
+			<td>-</td>
+			<td>25sec</td>
+			<td>5</td>
+
+			<td>9</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>30</td>
+			<td>300</td>
+			<td>10,000</td>
+			<td>500</td>
+
+			<td>100</td>
+			<td>40sec</td>
+			<td>5</td>
+			<td>18</td>
+		</tr><tr><td>4</td>
+			<td>40</td>
+
+			<td>300</td>
+			<td>15,000</td>
+			<td>1000</td>
+			<td>300</td>
+			<td>1min, 40sec</td>
+			<td>5</td>
+
+			<td>36</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>50</td>
+			<td>300</td>
+			<td>24,000</td>
+			<td>3000</td>
+
+			<td>1500</td>
+			<td>30min</td>
+			<td>5</td>
+			<td>60</td>
+		</tr><tr><td>6</td>
+			<td>60</td>
+
+			<td>300</td>
+			<td>35,000</td>
+			<td>8000</td>
+			<td>4000</td>
+			<td>2hr, 30min</td>
+			<td>5</td>
+
+			<td>90</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>70</td>
+			<td>300</td>
+			<td>50,000</td>
+			<td>15000</td>
+
+			<td>10000</td>
+			<td>8hr, 20min</td>
+			<td>5</td>
+			<td>126</td>
+		</tr><tr><td>8</td>
+			<td>80</td>
+
+			<td>300</td>
+			<td>80,000</td>
+			<td>30000</td>
+			<td>25000</td>
+			<td>16hr, 40min</td>
+			<td>5</td>
+
+			<td>171</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>90</td>
+			<td>300</td>
+			<td>125,000</td>
+			<td>60000</td>
+
+			<td>60000</td>
+			<td>1d, 2hr</td>
+			<td>5</td>
+			<td>225</td>
+		</tr><tr><td>10</td>
+			<td>100</td>
+
+			<td>300</td>
+			<td>175,000</td>
+			<td>120000</td>
+			<td>120000</td>
+			<td>1d, 13hr, 20min</td>
+			<td>5</td>
+
+			<td>300</td>
+		</tr><tr bgcolor="grey"><td><strong>Total</strong></td>
+			<td><strong>100</strong></td>
+			<td><strong>300</strong></td>
+			<td><strong>175,000</strong></td>
+			<td><strong>237,700</strong></td>
+
+			<td><strong>220,900</strong></td>
+			<td><strong>3d, 19hr</strong>, <strong>22min</strong>, <strong>45sec</strong></td>
+			<td><strong>5</strong></td>
+			<td><strong>300</strong></td>
+		</tr></table>
+]]></r>).toString();
+
+var woodcutters_hut = (<r><![CDATA[
+
+<h2>Woodcutter's Hut</h2>
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Wood Production/hr</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>20</td>
+			<td>50</td>
+			<td>-</td>
+			<td>15sec</td>
+
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>40</td>
+			<td>200</td>
+			<td>-</td>
+			<td>54sec</td>
+
+			<td>3</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>60</td>
+			<td>400</td>
+			<td>200</td>
+			<td>6min</td>
+
+			<td>6</td>
+		</tr><tr><td>4</td>
+			<td>85</td>
+			<td>1,400</td>
+			<td>600</td>
+			<td>45min</td>
+
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>110</td>
+			<td>3,500</td>
+			<td>1,500</td>
+			<td>1hr, 41min, 15sec</td>
+
+			<td>20</td>
+		</tr><tr><td>6</td>
+			<td>140</td>
+			<td>6,000</td>
+			<td>3,000</td>
+			<td>3hr, 22min, 30sec</td>
+
+			<td>30</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>175</td>
+			<td>10,000</td>
+			<td>5,000</td>
+			<td>6hr, 15min</td>
+
+			<td>42</td>
+		</tr><tr><td>8</td>
+			<td>210</td>
+			<td>16,000</td>
+			<td>8,000</td>
+			<td>9hr, 57min</td>
+
+			<td>57</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>250</td>
+			<td>25,000</td>
+			<td>13,000</td>
+			<td>14hr, 58min</td>
+
+			<td>75</td>
+		</tr><tr><td>10</td>
+			<td>300</td>
+			<td>38,000</td>
+			<td>20,000</td>
+			<td>22hr, 42min</td>
+
+			<td>100</td>
+		</tr><tr bgcolor="grey"><td><strong>Total</strong></td>
+			<td><strong>300</strong></td>
+			<td><strong>100,550</strong></td>
+			<td><strong>51,300</strong></td>
+			<td><strong>2d, 11hr, 47min, 39sec</strong></td>
+
+			<td><strong>100</strong></td>
+		</tr></table><table>
+]]></r>).toString();
+
+var cottage = (<r><![CDATA[
+<h2>Cottage</h2>
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Construction Speed</td>
+			<td>Manpower Bonus</td>
+
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+4%</td>
+
+			<td>+3%</td>
+			<td>-</td>
+			<td>50</td>
+			<td>15sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>+10%</td>
+			<td>+6%</td>
+			<td>-</td>
+			<td>150</td>
+			<td>54sec</td>
+			<td>2</td>
+
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+16%</td>
+			<td>+9%</td>
+			<td>-</td>
+			<td>300</td>
+			<td>6min</td>
+
+			<td>5</td>
+		</tr><tr><td>4</td>
+			<td>+25%</td>
+			<td>+12%</td>
+			<td>-</td>
+			<td>600</td>
+
+			<td>45min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+35%</td>
+			<td>+15%</td>
+			<td>200</td>
+
+			<td>1,000</td>
+			<td>1hr, 41min, 15sec</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+			<td>+46%</td>
+			<td>+18%</td>
+
+			<td>500</td>
+			<td>2,000</td>
+			<td>3hr, 22min, 30sec</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+58%</td>
+
+			<td>+21%</td>
+			<td>1,000</td>
+			<td>4,000</td>
+			<td>6hr, 15min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+
+			<td>+71%</td>
+			<td>+24%</td>
+			<td>2,000</td>
+			<td>7,500</td>
+			<td>9hr, 57min</td>
+			<td>46</td>
+
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+85%</td>
+			<td>+27%</td>
+			<td>5,000</td>
+			<td>14,000</td>
+			<td>14hr, 58min</td>
+
+			<td>60</td>
+		</tr><tr><td>10</td>
+			<td>+100%</td>
+			<td>+30%</td>
+			<td>12,000</td>
+			<td>17,000</td>
+
+			<td>22hr, 42min</td>
+			<td>80</td>
+		</tr><tr bgcolor="grey"><td><strong>Total</strong></td>
+			<td><strong>+100%</strong></td>
+			<td><strong>+30%</strong></td>
+			<td><strong>20,700</strong></td>
+
+			<td><strong>46,600</strong></td>
+			<td><strong>2d, 11hr, 47min, 54sec</strong></td>
+			<td><strong>80</strong></td>
+		</tr></table><table>
+
+
+]]></r>).toString();
+
+var warehouse = (<r><![CDATA[
+<h2>Warehouse</h2>
+<table border="1" width="900"><tr><td>Level</td>
+
+			<td>Storage</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>2,500</td>
+			<td>60</td>
+			<td>-</td>
+			<td>15sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>5,000</td>
+			<td>150</td>
+			<td>-</td>
+			<td>36sec</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+
+			<td>9,000</td>
+			<td>250</td>
+			<td>50</td>
+			<td>4min</td>
+			<td>5</td>
+		</tr><tr><td>4</td>
+
+			<td>16,000</td>
+			<td>500</td>
+			<td>150</td>
+			<td>30min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+
+			<td>26,000</td>
+			<td>1,600</td>
+			<td>400</td>
+			<td>1hr, 7min, 30sec</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+
+			<td>42,000</td>
+			<td>3,000</td>
+			<td>1,000</td>
+			<td>2hr, 15min</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>65,000</td>
+			<td>6,000</td>
+			<td>2,000</td>
+			<td>4hr, 6min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+
+			<td>100,000</td>
+			<td>9,600</td>
+			<td>4,800</td>
+			<td>6hr, 37min, 30sec</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+
+			<td>145,000</td>
+			<td>15,000</td>
+			<td>9,000</td>
+			<td>9hr, 58min, 30sec</td>
+			<td>60</td>
+		</tr><tr><td>10</td>
+
+			<td>200,000</td>
+			<td>20,000</td>
+			<td>13,000</td>
+			<td>15hr, 7min, 30sec</td>
+			<td>80</td>
+		</tr><tr bgcolor="grey"><td><strong>Total</strong></td>
+
+			<td><strong>200,000</strong></td>
+			<td><strong>56,160</strong></td>
+			<td><strong>30,400</strong></td>
+			<td><strong>1d, 15hr, 46min, 51sec</strong></td>
+			<td><strong>80</strong></td>
+		</tr></table><table>
+
+]]></r>).toString();
+
+
+var quarry = (<r><![CDATA[
+<h2>Quarry</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Stone Production/hr</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>20</td>
+			<td>50</td>
+			<td>-</td>
+			<td>15sec</td>
+
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>40</td>
+			<td>200</td>
+			<td>-</td>
+			<td>54sec</td>
+
+			<td>3</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>60</td>
+			<td>400</td>
+			<td>200</td>
+			<td>6min</td>
+
+			<td>6</td>
+		</tr><tr><td>4</td>
+			<td>85</td>
+			<td>1400</td>
+			<td>600</td>
+			<td>45min</td>
+
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>110</td>
+			<td>3500</td>
+			<td>1500</td>
+			<td>1hr, 41min, 15sec</td>
+
+			<td>20</td>
+		</tr><tr><td>6</td>
+			<td>140</td>
+			<td>6000</td>
+			<td>3000</td>
+			<td>3hr, 22min, 30sec</td>
+
+			<td>30</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>175</td>
+			<td>10000</td>
+			<td>5000</td>
+			<td>6hr, 15min</td>
+
+			<td>42</td>
+		</tr><tr><td>8</td>
+			<td>210</td>
+			<td>16000</td>
+			<td>8000</td>
+			<td>9hr, 57min</td>
+
+			<td>57</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>250</td>
+			<td>25000</td>
+			<td>13000</td>
+			<td>14hr, 58min</td>
+
+			<td>75</td>
+		</tr><tr><td>10</td>
+			<td>300</td>
+			<td>38000</td>
+			<td>20000</td>
+			<td>22hr, 42min</td>
+
+			<td>100</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var hideout = (<r><![CDATA[
+<h2>Hideout</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Hidden Storage</td>
+			<td>Resource Cost Wood</td>
+
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>500</td>
+			<td>-</td>
+
+			<td>50</td>
+			<td>15sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>1000</td>
+			<td>-</td>
+
+			<td>200</td>
+			<td>36sec</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>2000</td>
+			<td>-</td>
+
+			<td>600</td>
+			<td>4min</td>
+			<td>3</td>
+		</tr><tr><td>4</td>
+			<td>3000</td>
+			<td>-</td>
+
+			<td>1000</td>
+			<td>30min</td>
+			<td>5</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>4500</td>
+			<td>-</td>
+
+			<td>1500</td>
+			<td>1hr, 7min, 30sec</td>
+			<td>8</td>
+		</tr><tr><td>6</td>
+			<td>6000</td>
+			<td>-</td>
+
+			<td>2200</td>
+			<td>2hr, 15min</td>
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>8000</td>
+			<td>-</td>
+
+			<td>3500</td>
+			<td>4hr, 6min</td>
+			<td>17</td>
+		</tr><tr><td>8</td>
+			<td>10000</td>
+			<td>-</td>
+
+			<td>4500</td>
+			<td>6hr, 37min, 30sec</td>
+			<td>23</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>12000</td>
+			<td>-</td>
+
+			<td>6000</td>
+			<td>9hr, 58min, 30sec</td>
+			<td>30</td>
+		</tr><tr><td>10</td>
+			<td>15000</td>
+			<td>-</td>
+
+			<td>8000</td>
+			<td>15hr, 7min, 30sec</td>
+			<td>40</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var farm = (<r><![CDATA[
+<h2>Farm</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Food Production/hr</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>5</td>
+			<td>50</td>
+			<td>-</td>
+			<td>15sec</td>
+			<td>1</td>
+
+		</tr><tr><td>2</td>
+			<td>10</td>
+			<td>200</td>
+			<td>-</td>
+			<td>54sec</td>
+			<td>3</td>
+
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>15</td>
+			<td>400</td>
+			<td>200</td>
+			<td>6min</td>
+			<td>6</td>
+
+		</tr><tr><td>4</td>
+			<td>20</td>
+			<td>1400</td>
+			<td>600</td>
+			<td>45min</td>
+			<td>12</td>
+
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>30</td>
+			<td>3500</td>
+			<td>1500</td>
+			<td>1hr, 41min, 15sec</td>
+			<td>20</td>
+
+		</tr><tr><td>6</td>
+			<td>45</td>
+			<td>6000</td>
+			<td>3000</td>
+			<td>3hr, 22min, 30sec</td>
+			<td>30</td>
+
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>75</td>
+			<td>10000</td>
+			<td>5000</td>
+			<td>6hr, 15min</td>
+			<td>42</td>
+
+		</tr><tr><td>8</td>
+			<td>120</td>
+			<td>16000</td>
+			<td>8000</td>
+			<td>9hr, 57min</td>
+			<td>57</td>
+
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>200</td>
+			<td>25000</td>
+			<td>13000</td>
+			<td>14hr, 58min</td>
+			<td>75</td>
+
+		</tr><tr><td>10</td>
+			<td>300</td>
+			<td>38000</td>
+			<td>20000</td>
+			<td>22hr, 42min</td>
+			<td>100</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var iron_mine = (<r><![CDATA[
+<h2>Iron Mine</h2>
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Iron Production/hr</td>
+			<td>Resource Cost Wood</td>
+
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>20</td>
+			<td>50</td>
+
+			<td>-</td>
+			<td>15sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>40</td>
+			<td>200</td>
+
+			<td>-</td>
+			<td>54sec</td>
+			<td>3</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>60</td>
+			<td>400</td>
+
+			<td>200</td>
+			<td>6min</td>
+			<td>6</td>
+		</tr><tr><td>4</td>
+			<td>85</td>
+			<td>1400</td>
+
+			<td>600</td>
+			<td>45min</td>
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>110</td>
+			<td>3500</td>
+
+			<td>1500</td>
+			<td>1hr, 41min, 15sec</td>
+			<td>20</td>
+		</tr><tr><td>6</td>
+			<td>140</td>
+			<td>6000</td>
+
+			<td>3000</td>
+			<td>3hr, 22min, 30sec</td>
+			<td>30</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>175</td>
+			<td>10000</td>
+
+			<td>5000</td>
+			<td>6hr, 15min</td>
+			<td>42</td>
+		</tr><tr><td>8</td>
+			<td>210</td>
+			<td>16000</td>
+
+			<td>8000</td>
+			<td>9hr, 57min</td>
+			<td>57</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>250</td>
+			<td>25000</td>
+
+			<td>13000</td>
+			<td>14hr, 58min</td>
+			<td>75</td>
+		</tr><tr><td>10</td>
+			<td>300</td>
+			<td>38000</td>
+
+			<td>20000</td>
+			<td>22hr, 42min</td>
+			<td>100</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var townhouse = (<r><![CDATA[
+<h2>Townhouse</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+
+			<td>Gold Production/h</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>25</td>
+			<td>-</td>
+			<td>100</td>
+			<td>17sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>50</td>
+			<td>-</td>
+			<td>300</td>
+			<td>1min, 17sec</td>
+			<td>3</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+
+			<td>75</td>
+			<td>-</td>
+			<td>600</td>
+			<td>8min</td>
+			<td>6</td>
+		</tr><tr><td>4</td>
+
+			<td>100</td>
+			<td>-</td>
+			<td>2000</td>
+			<td>1hr</td>
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+
+			<td>130</td>
+			<td>1000</td>
+			<td>4000</td>
+			<td>2hr, 15min</td>
+			<td>20</td>
+		</tr><tr><td>6</td>
+
+			<td>170</td>
+			<td>2000</td>
+			<td>7000</td>
+			<td>4hr, 30min</td>
+			<td>30</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>210</td>
+			<td>3500</td>
+			<td>11500</td>
+			<td>8hr, 12min</td>
+			<td>42</td>
+		</tr><tr><td>8</td>
+
+			<td>260</td>
+			<td>7000</td>
+			<td>17000</td>
+			<td>13hr, 15min</td>
+			<td>57</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+
+			<td>320</td>
+			<td>14000</td>
+			<td>20000</td>
+			<td>19hr, 57min</td>
+			<td>75</td>
+		</tr><tr><td>10</td>
+
+			<td>400</td>
+			<td>29000</td>
+			<td>29000</td>
+			<td>30hr, 15min</td>
+			<td>100</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var marketplace = (<r><![CDATA[
+<h2>Marketplace</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Merchants Carts</td>
+			<td>Tax Bonus</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>1</td>
+			<td>+2%</td>
+			<td>40</td>
+
+			<td>20</td>
+			<td>20sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>4</td>
+			<td>+4%</td>
+
+			<td>80</td>
+			<td>40</td>
+			<td>1min, 48sec</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>10</td>
+
+			<td>+6%</td>
+			<td>160</td>
+			<td>80</td>
+			<td>12min</td>
+			<td>5</td>
+		</tr><tr><td>4</td>
+
+			<td>20</td>
+			<td>+8%</td>
+			<td>400</td>
+			<td>200</td>
+			<td>1hr, 30min</td>
+			<td>10</td>
+
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>30</td>
+			<td>+10%</td>
+			<td>1200</td>
+			<td>600</td>
+			<td>3hr, 22min, 30sec</td>
+
+			<td>16</td>
+		</tr><tr><td>6</td>
+			<td>50</td>
+			<td>+12%</td>
+			<td>2800</td>
+			<td>1400</td>
+
+			<td>6hr, 45min</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>70</td>
+			<td>+14%</td>
+			<td>5600</td>
+
+			<td>2800</td>
+			<td>12hr, 18min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+			<td>105</td>
+			<td>+16%</td>
+
+			<td>9600</td>
+			<td>4800</td>
+			<td>19hr, 52min, 30sec</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>145</td>
+
+			<td>+18%</td>
+			<td>15200</td>
+			<td>7600</td>
+			<td>29hr, 55min, 30sec</td>
+			<td>60</td>
+		</tr><tr><td>10</td>
+
+			<td>200</td>
+			<td>+20%</td>
+			<td>23200</td>
+			<td>11600</td>
+			<td>45hr, 22min, 30sec</td>
+			<td>80</td>
+
+		</tr></table>
+
+]]></r>).toString();
+
+
+var harbor = (<r><![CDATA[
+<h2>Harbor</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Merchant Ships</td>
+			<td>Tax Bonus</td>
+			<td>Resource Cost Wood</td>
+
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>1</td>
+			<td>+5%</td>
+
+			<td>80</td>
+			<td>40</td>
+			<td>22sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>2</td>
+
+			<td>+10%</td>
+			<td>160</td>
+			<td>80</td>
+			<td>2min, 24sec</td>
+			<td>3</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+
+			<td>4</td>
+			<td>+15%</td>
+			<td>320</td>
+			<td>160</td>
+			<td>16min</td>
+			<td>6</td>
+
+		</tr><tr><td>4</td>
+			<td>6</td>
+			<td>+20%</td>
+			<td>800</td>
+			<td>400</td>
+			<td>2hr</td>
+
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>9</td>
+			<td>+25%</td>
+			<td>2400</td>
+			<td>1200</td>
+
+			<td>4hr, 30min</td>
+			<td>20</td>
+		</tr><tr><td>6</td>
+			<td>12</td>
+			<td>+30%</td>
+			<td>5600</td>
+
+			<td>2800</td>
+			<td>9hr</td>
+			<td>30</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>15</td>
+			<td>+35%</td>
+
+			<td>11200</td>
+			<td>5600</td>
+			<td>16hr, 24min</td>
+			<td>42</td>
+		</tr><tr><td>8</td>
+			<td>19</td>
+
+			<td>+40%</td>
+			<td>19200</td>
+			<td>9600</td>
+			<td>26hr, 30min</td>
+			<td>57</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+
+			<td>24</td>
+			<td>+45%</td>
+			<td>30400</td>
+			<td>15200</td>
+			<td>39hr, 54min</td>
+			<td>75</td>
+
+		</tr><tr><td>10</td>
+			<td>30</td>
+			<td>+50%</td>
+			<td>46400</td>
+			<td>23200</td>
+			<td>60hr, 30min</td>
+
+			<td>100</td>
+		</tr></table>
+
+
+]]></r>).toString();
+
+
+var sawmill = (<r><![CDATA[
+<h2>Sawmill</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Efficiency Bonus</td>
+			<td>Wood Storage Bonus</td>
+
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+30%</td>
+
+			<td>+20%</td>
+			<td>60</td>
+			<td>60</td>
+			<td>20sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>+35%</td>
+			<td>+40%</td>
+			<td>150</td>
+			<td>150</td>
+			<td>1min, 48sec</td>
+			<td>4</td>
+
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+40%</td>
+			<td>+60%</td>
+			<td>350</td>
+			<td>350</td>
+			<td>12min</td>
+
+			<td>7</td>
+		</tr><tr><td>4</td>
+			<td>+45%</td>
+			<td>+80%</td>
+			<td>1100</td>
+			<td>1100</td>
+
+			<td>1hr, 30min</td>
+			<td>14</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+50%</td>
+			<td>+100%</td>
+			<td>2700</td>
+
+			<td>2700</td>
+			<td>3hr, 22min, 30sec</td>
+			<td>24</td>
+		</tr><tr><td>6</td>
+			<td>+55%</td>
+			<td>+120%</td>
+
+			<td>5000</td>
+			<td>5000</td>
+			<td>6hr, 45min</td>
+			<td>36</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+60%</td>
+
+			<td>+140%</td>
+			<td>8500</td>
+			<td>8500</td>
+			<td>12hr, 18min</td>
+			<td>50</td>
+		</tr><tr><td>8</td>
+
+			<td>+65%</td>
+			<td>+160%</td>
+			<td>13500</td>
+			<td>13500</td>
+			<td>19hr, 52min, 30sec</td>
+			<td>68</td>
+
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+70%</td>
+			<td>+180%</td>
+			<td>21500</td>
+			<td>21500</td>
+			<td>29hr, 55min, 30sec</td>
+
+			<td>90</td>
+		</tr><tr><td>10</td>
+			<td>+75%</td>
+			<td>+200%</td>
+			<td>33000</td>
+			<td>33000</td>
+
+			<td>45hr, 22min, 30sec</td>
+			<td>120</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var stonemason = (<r><![CDATA[
+<h2>Stonemason</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Efficiency Bonus</td>
+
+			<td>Stone Storage Bonus</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>+30%</td>
+			<td>+20%</td>
+			<td>60</td>
+			<td>60</td>
+			<td>20sec</td>
+			<td>1</td>
+
+		</tr><tr><td>2</td>
+			<td>+35%</td>
+			<td>+40%</td>
+			<td>150</td>
+			<td>150</td>
+			<td>1min, 48sec</td>
+
+			<td>4</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+40%</td>
+			<td>+60%</td>
+			<td>350</td>
+			<td>350</td>
+
+			<td>12min</td>
+			<td>7</td>
+		</tr><tr><td>4</td>
+			<td>+45%</td>
+			<td>+80%</td>
+			<td>1100</td>
+
+			<td>1100</td>
+			<td>90min</td>
+			<td>14</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+50%</td>
+			<td>+100%</td>
+
+			<td>2700</td>
+			<td>2700</td>
+			<td>3hr, 22min, 30sec</td>
+			<td>24</td>
+		</tr><tr><td>6</td>
+			<td>+55%</td>
+
+			<td>+120%</td>
+			<td>5000</td>
+			<td>5000</td>
+			<td>6hr, 45min</td>
+			<td>36</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>+60%</td>
+			<td>+140%</td>
+			<td>8500</td>
+			<td>7800</td>
+			<td>12hr, 18min</td>
+			<td>50</td>
+
+		</tr><tr><td>8</td>
+			<td>+65%</td>
+			<td>+160%</td>
+			<td>13500</td>
+			<td>13500</td>
+			<td>19hr, 52min, 30sec</td>
+
+			<td>68</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+70%</td>
+			<td>+180%</td>
+			<td>21500</td>
+			<td>21500</td>
+
+			<td>29hr, 55min, 30sec</td>
+			<td>90</td>
+		</tr><tr><td>10</td>
+			<td>+75%</td>
+			<td>+200%</td>
+			<td>33000</td>
+
+			<td>33000</td>
+			<td>45hr, 22min, 30sec</td>
+			<td>120</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var mill = (<r><![CDATA[
+<h2>Mill</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+
+			<td>Efficiency Bonus</td>
+			<td>Food Storage Bonus</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+30%</td>
+			<td>+20%</td>
+			<td>60</td>
+			<td>60</td>
+			<td>20sec</td>
+
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>+35%</td>
+			<td>+40%</td>
+			<td>150</td>
+			<td>150</td>
+
+			<td>108sec</td>
+			<td>4</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+40%</td>
+			<td>+60%</td>
+			<td>350</td>
+
+			<td>350</td>
+			<td>12min</td>
+			<td>7</td>
+		</tr><tr><td>4</td>
+			<td>+45%</td>
+			<td>+80%</td>
+
+			<td>1100</td>
+			<td>1100</td>
+			<td>90min</td>
+			<td>14</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+50%</td>
+
+			<td>+100%</td>
+			<td>2700</td>
+			<td>2700</td>
+			<td>3hr, 22min, 30sec</td>
+			<td>24</td>
+		</tr><tr><td>6</td>
+
+			<td>+55%</td>
+			<td>+120%</td>
+			<td>5000</td>
+			<td>5000</td>
+			<td>6hr, 45min</td>
+			<td>36</td>
+
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+60%</td>
+			<td>+140%</td>
+			<td>8500</td>
+			<td>8500</td>
+			<td>12hr, 18min</td>
+
+			<td>50</td>
+		</tr><tr><td>8</td>
+			<td>+65%</td>
+			<td>+160%</td>
+			<td>13500</td>
+			<td>13500</td>
+
+			<td>19hr, 52min, 30sec</td>
+			<td>68</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+70%</td>
+			<td>+180%</td>
+			<td>21500</td>
+
+			<td>21500</td>
+			<td>29hr, 55min, 30sec</td>
+			<td>90</td>
+		</tr><tr><td>10</td>
+			<td>+75%</td>
+			<td>+200%</td>
+
+			<td>33000</td>
+			<td>33000</td>
+			<td>45hr, 22min, 30sec</td>
+			<td>120</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var foundry = (<r><![CDATA[
+<h2>Foundry</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Efficiency Bonus</td>
+			<td>Iron Storage Bonus</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+30%</td>
+			<td>+20%</td>
+			<td>60</td>
+			<td>60</td>
+
+			<td>20sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>+35%</td>
+			<td>+40%</td>
+			<td>150</td>
+
+			<td>150</td>
+			<td>1min, 48sec</td>
+			<td>4</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+40%</td>
+			<td>+60%</td>
+
+			<td>350</td>
+			<td>350</td>
+			<td>12min</td>
+			<td>7</td>
+		</tr><tr><td>4</td>
+			<td>+45%</td>
+
+			<td>+80%</td>
+			<td>1100</td>
+			<td>1100</td>
+			<td>1hr, 30min</td>
+			<td>14</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+
+			<td>+50%</td>
+			<td>+100%</td>
+			<td>2700</td>
+			<td>2700</td>
+			<td>3hr, 22min, 30sec</td>
+			<td>24</td>
+
+		</tr><tr><td>6</td>
+			<td>+55%</td>
+			<td>+120%</td>
+			<td>5000</td>
+			<td>5000</td>
+			<td>6hr, 45min</td>
+
+			<td>36</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+60%</td>
+			<td>+140%</td>
+			<td>8500</td>
+			<td>8500</td>
+
+			<td>12hr, 18min</td>
+			<td>50</td>
+		</tr><tr><td>8</td>
+			<td>+65%</td>
+			<td>+160%</td>
+			<td>13500</td>
+
+			<td>13500</td>
+			<td>19hr, 52min, 30sec</td>
+			<td>68</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+70%</td>
+			<td>+180%</td>
+
+			<td>21500</td>
+			<td>21500</td>
+			<td>29hr, 55min, 30sec</td>
+			<td>90</td>
+		</tr><tr><td>10</td>
+			<td>+75%</td>
+
+			<td>+200%</td>
+			<td>33000</td>
+			<td>33000</td>
+			<td>45hr, 22min, 30sec</td>
+			<td>120</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var city_wall = (<r><![CDATA[
+<h2>City Wall</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Combat Bonus</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+1%</td>
+			<td>-</td>
+			<td>200</td>
+			<td>30sec</td>
+
+			<td>2</td>
+		</tr><tr><td>2</td>
+			<td>+3%</td>
+			<td>-</td>
+			<td>2000</td>
+			<td>20min</td>
+
+			<td>6</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+6%</td>
+			<td>-</td>
+			<td>8000</td>
+			<td>1hr</td>
+
+			<td>12</td>
+		</tr><tr><td>4</td>
+			<td>+10%</td>
+			<td>-</td>
+			<td>20000</td>
+			<td>3hr</td>
+
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+15%</td>
+			<td>-</td>
+			<td>30000</td>
+			<td>5hr</td>
+
+			<td>40</td>
+		</tr><tr><td>6</td>
+			<td>+20%</td>
+			<td>-</td>
+			<td>45000</td>
+			<td>8hr</td>
+
+			<td>60</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+26%</td>
+			<td>-</td>
+			<td>70000</td>
+			<td>12hr</td>
+
+			<td>84</td>
+		</tr><tr><td>8</td>
+			<td>+33%</td>
+			<td>-</td>
+			<td>100000</td>
+			<td>18hr</td>
+
+			<td>114</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+41%</td>
+			<td>-</td>
+			<td>140000</td>
+			<td>25hr</td>
+
+			<td>150</td>
+		</tr><tr><td>10</td>
+			<td>+50%</td>
+			<td>-</td>
+			<td>200000</td>
+			<td>35hr</td>
+
+			<td>200</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var city_guard_house = (<r><![CDATA[
+<h2>City Guard House</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Recruiting Speed City Guards</td>
+
+			<td>Recruiting Unit Type</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>+5%</td>
+			<td>City Guard</td>
+			<td>15</td>
+			<td>30</td>
+			<td>17sec</td>
+			<td>1</td>
+
+		</tr><tr><td>2</td>
+			<td>+10%</td>
+			<td>-</td>
+			<td>30</td>
+			<td>60</td>
+			<td>1min 12sec</td>
+
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+16%</td>
+			<td>-</td>
+			<td>55</td>
+			<td>110</td>
+
+			<td>8min</td>
+			<td>4</td>
+		</tr><tr><td>4</td>
+			<td>+24%</td>
+			<td>-</td>
+			<td>140</td>
+
+			<td>280</td>
+			<td>1hr</td>
+			<td>7</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+35%</td>
+			<td>-</td>
+
+			<td>400</td>
+			<td>800</td>
+			<td>2hr, 15min</td>
+			<td>12</td>
+		</tr><tr><td>6</td>
+			<td>+50%</td>
+
+			<td>-</td>
+			<td>1000</td>
+			<td>2000</td>
+			<td>4hr, 30min</td>
+			<td>18</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>+68%</td>
+			<td>-</td>
+			<td>1900</td>
+			<td>3800</td>
+			<td>8hr, 12min</td>
+			<td>25</td>
+
+		</tr><tr><td>8</td>
+			<td>+90%</td>
+			<td>-</td>
+			<td>3200</td>
+			<td>6400</td>
+			<td>13hr, 15min</td>
+
+			<td>34</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+115%</td>
+			<td>-</td>
+			<td>5100</td>
+			<td>10200</td>
+
+			<td>19hr, 57min</td>
+			<td>45</td>
+		</tr><tr><td>10</td>
+			<td>+150%</td>
+			<td>-</td>
+			<td>8000</td>
+
+			<td>16000</td>
+			<td>30hr, 20min</td>
+			<td>60</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var lookout_tower = (<r><![CDATA[
+<h2>Lookout Tower</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+
+			<td>Time Bonus</td>
+			<td>Unit Count (Scout)</td>
+			<td>Unit Count (City Guard)</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+30 min</td>
+			<td>4</td>
+			<td>8</td>
+			<td>-</td>
+
+			<td>200</td>
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>+1 hr</td>
+			<td>8</td>
+
+			<td>16</td>
+			<td>-</td>
+			<td>400</td>
+			<td>5min</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+
+			<td>+2 hr</td>
+			<td>15</td>
+			<td>30</td>
+			<td>-</td>
+			<td>600</td>
+			<td>13min, 30sec</td>
+
+			<td>3</td>
+		</tr><tr><td>4</td>
+			<td>+3 hr</td>
+			<td>25</td>
+			<td>50</td>
+			<td>-</td>
+
+			<td>1000</td>
+			<td>25min</td>
+			<td>5</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+4 hr</td>
+			<td>40</td>
+
+			<td>80</td>
+			<td>-</td>
+			<td>1500</td>
+			<td>40min</td>
+			<td>8</td>
+		</tr><tr><td>6</td>
+
+			<td>+5 hr</td>
+			<td>60</td>
+			<td>120</td>
+			<td>-</td>
+			<td>2200</td>
+			<td>1h</td>
+
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+6 hr</td>
+			<td>88</td>
+			<td>176</td>
+			<td>-</td>
+
+			<td>3500</td>
+			<td>1h, 22min</td>
+			<td>17</td>
+		</tr><tr><td>8</td>
+			<td>+7 hr</td>
+			<td>125</td>
+
+			<td>250</td>
+			<td>-</td>
+			<td>5000</td>
+			<td>1h, 50min</td>
+			<td>23</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+
+			<td>+8 hr</td>
+			<td>175</td>
+			<td>350</td>
+			<td>-</td>
+			<td>7000</td>
+			<td>2h, 25min</td>
+
+			<td>30</td>
+		</tr><tr><td>10</td>
+			<td>+10 hr</td>
+			<td>250</td>
+			<td>500</td>
+			<td>-</td>
+
+			<td>10000</td>
+			<td>3hr, 20min</td>
+			<td>40</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+
+var ranger_tower = (<r><![CDATA[
+<h2>Ranger Tower</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+
+			<td>Unit Count</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>30</td>
+			<td>-</td>
+			<td>100</td>
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>60</td>
+			<td>-</td>
+			<td>200</td>
+			<td>5min</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+
+			<td>120</td>
+			<td>-</td>
+			<td>400</td>
+			<td>13min, 30sec</td>
+			<td>5</td>
+		</tr><tr><td>4</td>
+
+			<td>200</td>
+			<td>-</td>
+			<td>1000</td>
+			<td>25min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+
+			<td>320</td>
+			<td>-</td>
+			<td>3000</td>
+			<td>40min</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+
+			<td>480</td>
+			<td>-</td>
+			<td>7000</td>
+			<td>1h</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>700</td>
+			<td>-</td>
+			<td>14000</td>
+			<td>1h, 22min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+
+			<td>1000</td>
+			<td>-</td>
+			<td>24000</td>
+			<td>1h, 50min</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+
+			<td>1400</td>
+			<td>-</td>
+			<td>38000</td>
+			<td>2h, 25min</td>
+			<td>60</td>
+		</tr><tr><td>10</td>
+
+			<td>2000</td>
+			<td>-</td>
+			<td>58000</td>
+			<td>3h, 20min</td>
+			<td>80</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var barracks = (<r><![CDATA[
+<h2>Barracks</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Army Size</td>
+			<td>Recruiting Speed</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+10</td>
+			<td>+1%</td>
+			<td>-</td>
+
+			<td>50</td>
+			<td>15sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>+30</td>
+			<td>+2%</td>
+
+			<td>-</td>
+			<td>150</td>
+			<td>36sec</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+60</td>
+
+			<td>+4%</td>
+			<td>-</td>
+			<td>300</td>
+			<td>4min</td>
+			<td>4</td>
+		</tr><tr><td>4</td>
+
+			<td>+100</td>
+			<td>+6%</td>
+			<td>-</td>
+			<td>600</td>
+			<td>30min</td>
+			<td>7</td>
+
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+160</td>
+			<td>+8%</td>
+			<td>-</td>
+			<td>1200</td>
+			<td>1hr, 7min, 30sec</td>
+
+			<td>12</td>
+		</tr><tr><td>6</td>
+			<td>+240</td>
+			<td>+10%</td>
+			<td>-</td>
+			<td>2500</td>
+
+			<td>2hr, 15min</td>
+			<td>18</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+350</td>
+			<td>+13%</td>
+			<td>-</td>
+
+			<td>4000</td>
+			<td>4hr, 6min</td>
+			<td>25</td>
+		</tr><tr><td>8</td>
+			<td>+500</td>
+			<td>+16%</td>
+
+			<td>-</td>
+			<td>7000</td>
+			<td>6hr, 37min, 30sec</td>
+			<td>34</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+700</td>
+
+			<td>+20%</td>
+			<td>-</td>
+			<td>11500</td>
+			<td>9hr, 58min, 30sec</td>
+			<td>45</td>
+		</tr><tr><td>10</td>
+
+			<td>+1000</td>
+			<td>+25%</td>
+			<td>-</td>
+			<td>17500</td>
+			<td>15hr, 7min, 30sec</td>
+			<td>60</td>
+
+		</tr><tr bgcolor="grey"><td>Total</td>
+			<td>+1000</td>
+			<td>+25%</td>
+			<td>-</td>
+			<td>44800</td>
+			<td>39hr, 46min, 51sec</td>
+
+			<td>60</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var training_ground = (<r><![CDATA[
+<h2>Training Ground</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Recruiting Speed</td>
+			<td>Recruiting Unit Type</td>
+
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+5%</td>
+
+			<td>Berserker</td>
+			<td>20</td>
+			<td>40</td>
+			<td>20sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>+10%</td>
+			<td>-</td>
+			<td>40</td>
+			<td>80</td>
+			<td>1min, 48sec</td>
+			<td>2</td>
+
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+16%</td>
+			<td>-</td>
+			<td>80</td>
+			<td>160</td>
+			<td>12min</td>
+
+			<td>5</td>
+		</tr><tr><td>4</td>
+			<td>+24%</td>
+			<td>Ranger</td>
+			<td>200</td>
+			<td>400</td>
+
+			<td>1hr 30min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+35%</td>
+			<td>-</td>
+			<td>600</td>
+
+			<td>1200</td>
+			<td>3hr, 22min, 30sec</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+			<td>+50%</td>
+			<td>-</td>
+
+			<td>1400</td>
+			<td>2800</td>
+			<td>6hr, 45min</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+68%</td>
+
+			<td>-</td>
+			<td>2800</td>
+			<td>5600</td>
+			<td>12hr, 18min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+
+			<td>+90%</td>
+			<td>-</td>
+			<td>4800</td>
+			<td>9600</td>
+			<td>19hr, 52min, 30sec</td>
+			<td>46</td>
+
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+115%</td>
+			<td>-</td>
+			<td>7500</td>
+			<td>15000</td>
+			<td>29hr, 55min, 30sec</td>
+
+			<td>60</td>
+		</tr><tr><td>10</td>
+			<td>150%</td>
+			<td>Guardian</td>
+			<td>11500</td>
+			<td>23000</td>
+
+			<td>45hr, 22min, 30sec</td>
+			<td>80</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var pitfall_trap = (<r><![CDATA[
+<h2>Pitfall Trap</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Unit Count</td>
+
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>16</td>
+
+			<td>30</td>
+			<td>90</td>
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>26</td>
+
+			<td>60</td>
+			<td>180</td>
+			<td>5min</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>50</td>
+
+			<td>110</td>
+			<td>330</td>
+			<td>13min, 30sec</td>
+			<td>5</td>
+		</tr><tr><td>4</td>
+			<td>100</td>
+
+			<td>280</td>
+			<td>840</td>
+			<td>25min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>160</td>
+
+			<td>830</td>
+			<td>2490</td>
+			<td>40min</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+			<td>240</td>
+
+			<td>1930</td>
+			<td>5790</td>
+			<td>1hr</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>350</td>
+
+			<td>3850</td>
+			<td>11550</td>
+			<td>1hr, 22min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+			<td>500</td>
+
+			<td>6600</td>
+			<td>19800</td>
+			<td>1hr, 50min</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>700</td>
+
+			<td>10500</td>
+			<td>31500</td>
+			<td>2hr, 25min</td>
+			<td>60</td>
+		</tr><tr><td>10</td>
+			<td>1000</td>
+
+			<td>16000</td>
+			<td>48000</td>
+			<td>3hr, 20min</td>
+			<td>80</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var stable = (<r><![CDATA[
+<h2>Stable</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Recruiting Speed</td>
+			<td>Recruiting Unit Type</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+5%</td>
+			<td>Scout</td>
+			<td>25</td>
+			<td>50</td>
+
+			<td>22sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>+10%</td>
+			<td>-</td>
+			<td>55</td>
+
+			<td>110</td>
+			<td>2min, 24sec</td>
+			<td>3</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+16%</td>
+			<td>-</td>
+
+			<td>110</td>
+			<td>220</td>
+			<td>16min</td>
+			<td>6</td>
+		</tr><tr><td>4</td>
+			<td>+24%</td>
+
+			<td>-</td>
+			<td>275</td>
+			<td>550</td>
+			<td>2hr</td>
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+
+			<td>+35%</td>
+			<td>Crossbowman</td>
+			<td>800</td>
+			<td>1600</td>
+			<td>4hr, 30min</td>
+			<td>20</td>
+
+		</tr><tr><td>6</td>
+			<td>+50%</td>
+			<td>-</td>
+			<td>1900</td>
+			<td>3800</td>
+			<td>9hr</td>
+
+			<td>30</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+68%</td>
+			<td>-</td>
+			<td>3750</td>
+			<td>7500</td>
+
+			<td>16hr, 24min</td>
+			<td>42</td>
+		</tr><tr><td>8</td>
+			<td>+90%</td>
+			<td>-</td>
+			<td>6500</td>
+
+			<td>13000</td>
+			<td>26hr, 30min</td>
+			<td>57</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+115%</td>
+			<td>-</td>
+
+			<td>10200</td>
+			<td>20400</td>
+			<td>39hr, 54min</td>
+			<td>75</td>
+		</tr><tr><td>10</td>
+			<td>+150%</td>
+
+			<td>Knight</td>
+			<td>15500</td>
+			<td>31000</td>
+			<td>60hr, 30min</td>
+			<td>100</td>
+		</tr><tr bgcolor="grey"><td>Total</td>
+
+			<td>150%</td>
+			<td>Scout, Crossbowman, Knight</td>
+			<td>39115</td>
+			<td>78230</td>
+			<td>159hr, 6min, 46sec</td>
+			<td>100</td>
+
+		</tr></table>
+
+]]></r>).toString();
+
+
+var guardian_tower = (<r><![CDATA[
+<h2>Guardian Tower</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Unit Count</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>30</td>
+			<td>-</td>
+			<td>100</td>
+
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>60</td>
+			<td>-</td>
+			<td>200</td>
+
+			<td>5min</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>120</td>
+			<td>-</td>
+			<td>400</td>
+
+			<td>13min, 30sec</td>
+			<td>5</td>
+		</tr><tr><td>4</td>
+			<td>200</td>
+			<td>-</td>
+			<td>1000</td>
+
+			<td>25min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>320</td>
+			<td>-</td>
+			<td>3000</td>
+
+			<td>40min</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+			<td>480</td>
+			<td>-</td>
+			<td>7000</td>
+
+			<td>1hr</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>700</td>
+			<td>-</td>
+			<td>14000</td>
+
+			<td>1hr, 22min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+			<td>1000</td>
+			<td>-</td>
+			<td>24000</td>
+
+			<td>1hr, 50min</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>1400</td>
+			<td>-</td>
+			<td>38000</td>
+
+			<td>2hr, 25min</td>
+			<td>60</td>
+		</tr><tr><td>10</td>
+			<td>2000</td>
+			<td>-</td>
+			<td>58000</td>
+
+			<td>3hr, 20min</td>
+			<td>80</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var moonglow_tower = (<r><![CDATA[
+<h2>Moonglow Tower</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Recruiting Speed</td>
+
+			<td>Recruiting Unit Type</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>+5%</td>
+			<td>Mage</td>
+			<td>30</td>
+			<td>60</td>
+			<td>22sec</td>
+			<td>1</td>
+
+		</tr><tr><td>2</td>
+			<td>+10%</td>
+			<td>-</td>
+			<td>60</td>
+			<td>120</td>
+			<td>2min, 24sec</td>
+
+			<td>4</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+16%</td>
+			<td>-</td>
+			<td>120</td>
+			<td>240</td>
+
+			<td>16min</td>
+			<td>7</td>
+		</tr><tr><td>4</td>
+			<td>+24%</td>
+			<td>-</td>
+			<td>300</td>
+
+			<td>600</td>
+			<td>2hr</td>
+			<td>14</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+35%</td>
+			<td>-</td>
+
+			<td>900</td>
+			<td>1800</td>
+			<td>4hr, 30min</td>
+			<td>24</td>
+		</tr><tr><td>6</td>
+			<td>+50%</td>
+
+			<td>-</td>
+			<td>2100</td>
+			<td>4200</td>
+			<td>9hr</td>
+			<td>36</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>+68%</td>
+			<td>Warlock</td>
+			<td>4200</td>
+			<td>8400</td>
+			<td>16hr, 24min</td>
+			<td>50</td>
+
+		</tr><tr><td>8</td>
+			<td>+90%</td>
+			<td>-</td>
+			<td>7200</td>
+			<td>14400</td>
+			<td>26hr, 30min</td>
+
+			<td>68</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+115%</td>
+			<td>-</td>
+			<td>11400</td>
+			<td>22800</td>
+
+			<td>39hr, 54min</td>
+			<td>90</td>
+		</tr><tr><td>10</td>
+			<td>+150%</td>
+			<td>-</td>
+			<td>17400</td>
+
+			<td>34800</td>
+			<td>60hr, 30min</td>
+			<td>120</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var barricade = (<r><![CDATA[
+<h2>Barricade</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+
+			<td>Unit Count</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>16</td>
+			<td>30</td>
+			<td>90</td>
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>26</td>
+			<td>60</td>
+			<td>180</td>
+			<td>5min</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+
+			<td>50</td>
+			<td>110</td>
+			<td>330</td>
+			<td>13min, 30sec</td>
+			<td>5</td>
+		</tr><tr><td>4</td>
+
+			<td>100</td>
+			<td>280</td>
+			<td>840</td>
+			<td>25min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+
+			<td>160</td>
+			<td>830</td>
+			<td>2490</td>
+			<td>40min</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+
+			<td>240</td>
+			<td>1930</td>
+			<td>5790</td>
+			<td>1hr</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>350</td>
+			<td>3850</td>
+			<td>11550</td>
+			<td>1hr, 22min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+
+			<td>500</td>
+			<td>6600</td>
+			<td>19800</td>
+			<td>1hr, 50min</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+
+			<td>700</td>
+			<td>10500</td>
+			<td>31500</td>
+			<td>2hr, 25min</td>
+			<td>60</td>
+		</tr><tr><td>10</td>
+
+			<td>1000</td>
+			<td>16000</td>
+			<td>48000</td>
+			<td>3hr, 20min</td>
+			<td>80</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var castle = (<r><![CDATA[
+<h2>Castle</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Max of Commands</td>
+			<td>Max Army Size</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+1</td>
+			<td>+20%</td>
+			<td>-</td>
+
+			<td>20000</td>
+			<td>20hr</td>
+			<td>4</td>
+		</tr><tr><td>2</td>
+			<td>+2</td>
+			<td>+40%</td>
+
+			<td>-</td>
+			<td>25000</td>
+			<td>23hr, 20min</td>
+			<td>12</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+3</td>
+
+			<td>+60%</td>
+			<td>-</td>
+			<td>30000</td>
+			<td>26hr, 40min</td>
+			<td>24</td>
+		</tr><tr><td>4</td>
+
+			<td>+4</td>
+			<td>+80%</td>
+			<td>-</td>
+			<td>40000</td>
+			<td>30hr</td>
+			<td>48</td>
+
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+5</td>
+			<td>+100%</td>
+			<td>-</td>
+			<td>55000</td>
+			<td>33hr, 20min</td>
+
+			<td>80</td>
+		</tr><tr><td>6</td>
+			<td>+6</td>
+			<td>+130%</td>
+			<td>-</td>
+			<td>75000</td>
+
+			<td>36hr, 40min</td>
+			<td>120</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+7</td>
+			<td>+160%</td>
+			<td>-</td>
+
+			<td>100000</td>
+			<td>40hr</td>
+			<td>168</td>
+		</tr><tr><td>8</td>
+			<td>+8</td>
+			<td>+200%</td>
+
+			<td>-</td>
+			<td>130000</td>
+			<td>43hr, 20min</td>
+			<td>228</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+9</td>
+
+			<td>+250%</td>
+			<td>-</td>
+			<td>160000</td>
+			<td>46hr, 40min</td>
+			<td>300</td>
+		</tr><tr><td>10</td>
+
+			<td>+10</td>
+			<td>+300%</td>
+			<td>-</td>
+			<td>200000</td>
+			<td>50hr</td>
+			<td>400</td>
+
+		</tr><tr bgcolor="grey"><td>Total</td>
+			<td>+10</td>
+			<td>+300%</td>
+			<td>-</td>
+			<td>835000</td>
+			<td>14d, 14hr</td>
+
+			<td>400</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var trinsic_temple = (<r><![CDATA[
+<h2>Trinsic Temple</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Recruiting Speed</td>
+			<td>Recruiting Unit Type</td>
+
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+5%</td>
+
+			<td>Templar</td>
+			<td>35</td>
+			<td>70</td>
+			<td>22sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>+10%</td>
+			<td>-</td>
+			<td>70</td>
+			<td>140</td>
+			<td>2min, 44sec</td>
+			<td>4</td>
+
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+16%</td>
+			<td>-</td>
+			<td>135</td>
+			<td>270</td>
+			<td>16min</td>
+
+			<td>7</td>
+		</tr><tr><td>4</td>
+			<td>+24%</td>
+			<td>-</td>
+			<td>335</td>
+			<td>670</td>
+
+			<td>2hr</td>
+			<td>14</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+35%</td>
+			<td>-</td>
+			<td>1000</td>
+
+			<td>2000</td>
+			<td>4hr, 30min</td>
+			<td>24</td>
+		</tr><tr><td>6</td>
+			<td>+50%</td>
+			<td>Paladin</td>
+
+			<td>2350</td>
+			<td>4700</td>
+			<td>9hr</td>
+			<td>36</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+68%</td>
+
+			<td>-</td>
+			<td>4650</td>
+			<td>9300</td>
+			<td>16hr, 24min</td>
+			<td>50</td>
+		</tr><tr><td>8</td>
+
+			<td>+90%</td>
+			<td>-</td>
+			<td>8000</td>
+			<td>16000</td>
+			<td>26hr, 30min</td>
+			<td>68</td>
+
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+115%</td>
+			<td>-</td>
+			<td>12700</td>
+			<td>25400</td>
+			<td>39hr, 54min</td>
+
+			<td>90</td>
+		</tr><tr><td>10</td>
+			<td>+150%</td>
+			<td>Baron</td>
+			<td>19500</td>
+			<td>39000</td>
+
+			<td>60hr, 30min</td>
+			<td>120</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var templar_tower = (<r><![CDATA[
+<h2>Templar Tower</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Unit Count</td>
+
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>30</td>
+
+			<td>-</td>
+			<td>100</td>
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>60</td>
+
+			<td>-</td>
+			<td>200</td>
+			<td>5min</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>120</td>
+
+			<td>-</td>
+			<td>400</td>
+			<td>13min, 30sec</td>
+			<td>5</td>
+		</tr><tr><td>4</td>
+			<td>200</td>
+
+			<td>-</td>
+			<td>1000</td>
+			<td>25min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>320</td>
+
+			<td>-</td>
+			<td>3000</td>
+			<td>40min</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+			<td>480</td>
+
+			<td>-</td>
+			<td>7000</td>
+			<td>1h</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>700</td>
+
+			<td>-</td>
+			<td>14000</td>
+			<td>1h, 22min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+			<td>1000</td>
+
+			<td>-</td>
+			<td>24000</td>
+			<td>1h, 50min</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>1400</td>
+
+			<td>-</td>
+			<td>38000</td>
+			<td>2h, 25min</td>
+			<td>60</td>
+		</tr><tr><td>10</td>
+			<td>2000</td>
+
+			<td>-</td>
+			<td>58000</td>
+			<td>3h, 20min</td>
+			<td>80</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var arcane_trap = (<r><![CDATA[
+<h2>Arcane Trap</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Unit Count</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>16</td>
+			<td>30</td>
+			<td>90</td>
+			<td>25sec</td>
+			<td>1</td>
+
+		</tr><tr><td>2</td>
+			<td>26</td>
+			<td>60</td>
+			<td>180</td>
+			<td>5min</td>
+			<td>2</td>
+
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>50</td>
+			<td>110</td>
+			<td>330</td>
+			<td>13min, 30sec</td>
+			<td>5</td>
+
+		</tr><tr><td>4</td>
+			<td>100</td>
+			<td>280</td>
+			<td>840</td>
+			<td>25min</td>
+			<td>10</td>
+
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>160</td>
+			<td>830</td>
+			<td>2490</td>
+			<td>40min</td>
+			<td>16</td>
+
+		</tr><tr><td>6</td>
+			<td>240</td>
+			<td>1930</td>
+			<td>5790</td>
+			<td>1hr</td>
+			<td>24</td>
+
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>350</td>
+			<td>3850</td>
+			<td>11550</td>
+			<td>1hr, 22min</td>
+			<td>34</td>
+
+		</tr><tr><td>8</td>
+			<td>500</td>
+			<td>6600</td>
+			<td>19800</td>
+			<td>1hr, 50min</td>
+			<td>46</td>
+
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>700</td>
+			<td>10500</td>
+			<td>31500</td>
+			<td>2hr, 25min</td>
+			<td>60</td>
+
+		</tr><tr><td>10</td>
+			<td>1000</td>
+			<td>16000</td>
+			<td>48000</td>
+			<td>3hr, 20min</td>
+			<td>80</td>
+
+		</tr></table>
+
+]]></r>).toString();
+
+
+var ballista_tower = (<r><![CDATA[
+<h2>Ballista Tower</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Unit Count (Ballista)</td>
+			<td>Unit Count (City Guard)</td>
+			<td>Resource Cost Wood</td>
+
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>4</td>
+			<td>40</td>
+
+			<td>-</td>
+			<td>100</td>
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+			<td>8</td>
+
+			<td>80</td>
+			<td>-</td>
+			<td>200</td>
+			<td>5min</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+
+			<td>15</td>
+			<td>150</td>
+			<td>-</td>
+			<td>400</td>
+			<td>13min, 30sec</td>
+			<td>5</td>
+
+		</tr><tr><td>4</td>
+			<td>25</td>
+			<td>250</td>
+			<td>-</td>
+			<td>1000</td>
+			<td>25min</td>
+
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>40</td>
+			<td>400</td>
+			<td>-</td>
+			<td>3000</td>
+
+			<td>40min</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+			<td>60</td>
+			<td>600</td>
+			<td>-</td>
+
+			<td>7000</td>
+			<td>1hr</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>88</td>
+			<td>880</td>
+
+			<td>-</td>
+			<td>14000</td>
+			<td>1hr, 22min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+			<td>125</td>
+
+			<td>1250</td>
+			<td>-</td>
+			<td>24000</td>
+			<td>1hr, 50min</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+
+			<td>175</td>
+			<td>1750</td>
+			<td>-</td>
+			<td>38000</td>
+			<td>2hr, 25min</td>
+			<td>60</td>
+
+		</tr><tr><td>10</td>
+			<td>250</td>
+			<td>2500</td>
+			<td>-</td>
+			<td>58000</td>
+			<td>3hr, 20min</td>
+
+			<td>80</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var workshop = (<r><![CDATA[
+<h2>Workshop</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Recruiting Speed</td>
+			<td>Recruiting Unit Type</td>
+
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+			<td>+5%</td>
+
+			<td>Ram</td>
+			<td>40</td>
+			<td>80</td>
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>+10%</td>
+			<td>-</td>
+			<td>75</td>
+			<td>150</td>
+			<td>3min</td>
+			<td>4</td>
+
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+16%</td>
+			<td>-</td>
+			<td>150</td>
+			<td>300</td>
+			<td>20min</td>
+
+			<td>8</td>
+		</tr><tr><td>4</td>
+			<td>+24%</td>
+			<td>-</td>
+			<td>370</td>
+			<td>740</td>
+
+			<td>2hr, 30min</td>
+			<td>17</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+35%</td>
+			<td>-</td>
+			<td>1100</td>
+
+			<td>2200</td>
+			<td>5hr, 37min, 30sec</td>
+			<td>28</td>
+		</tr><tr><td>6</td>
+			<td>+50%</td>
+			<td>Ballista</td>
+
+			<td>2600</td>
+			<td>5200</td>
+			<td>11hr, 15min</td>
+			<td>42</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+			<td>+68%</td>
+
+			<td>-</td>
+			<td>5200</td>
+			<td>10400</td>
+			<td>20hr, 30min</td>
+			<td>59</td>
+		</tr><tr><td>8</td>
+
+			<td>+90%</td>
+			<td>-</td>
+			<td>8900</td>
+			<td>17800</td>
+			<td>33hr, 7min, 30sec</td>
+			<td>80</td>
+
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+115%</td>
+			<td>-</td>
+			<td>14000</td>
+			<td>28000</td>
+			<td>49hr, 52min, 30sec</td>
+
+			<td>105</td>
+		</tr><tr><td>10</td>
+			<td>+150%</td>
+			<td>Catapult</td>
+			<td>21500</td>
+			<td>43000</td>
+
+			<td>75hr, 37min, 30sec</td>
+			<td>140</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var shipyard = (<r><![CDATA[
+<h2>Shipyard</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+			<td>Recruiting Speed</td>
+
+			<td>Recruiting Unit Type</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>+5%</td>
+			<td>Sloop</td>
+			<td>50</td>
+			<td>100</td>
+			<td>27sec</td>
+			<td>2</td>
+
+		</tr><tr><td>2</td>
+			<td>+10%</td>
+			<td>-</td>
+			<td>100</td>
+			<td>200</td>
+			<td>3min, 36sec</td>
+
+			<td>5</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+			<td>+16%</td>
+			<td>-</td>
+			<td>200</td>
+			<td>400</td>
+
+			<td>24min</td>
+			<td>10</td>
+		</tr><tr><td>4</td>
+			<td>+24%</td>
+			<td>-</td>
+			<td>500</td>
+
+			<td>1000</td>
+			<td>3hr</td>
+			<td>19</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+			<td>+35%</td>
+			<td>-</td>
+
+			<td>1500</td>
+			<td>3000</td>
+			<td>6hr, 45min</td>
+			<td>32</td>
+		</tr><tr><td>6</td>
+			<td>+50%</td>
+
+			<td>Frigate</td>
+			<td>3500</td>
+			<td>7000</td>
+			<td>13hr, 30min</td>
+			<td>48</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>+68%</td>
+			<td>-</td>
+			<td>7000</td>
+			<td>14000</td>
+			<td>24hr, 36min</td>
+			<td>67</td>
+
+		</tr><tr><td>8</td>
+			<td>+90%</td>
+			<td>-</td>
+			<td>12000</td>
+			<td>24000</td>
+			<td>39hr, 45min</td>
+
+			<td>91</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+			<td>+115%</td>
+			<td>-</td>
+			<td>19000</td>
+			<td>38000</td>
+
+			<td>59hr, 51min</td>
+			<td>120</td>
+		</tr><tr><td>10</td>
+			<td>+150%</td>
+			<td>War Galleon</td>
+			<td>29000</td>
+
+			<td>58000</td>
+			<td>90hr, 45min</td>
+			<td>160</td>
+		</tr></table>
+
+]]></r>).toString();
+
+
+var camouflage_trap = (<r><![CDATA[
+<h2>Camouflage Trap</h2>
+
+<table border="1" width="900"><tr><td>Level</td>
+
+			<td>Unit Count</td>
+			<td>Resource Cost Wood</td>
+			<td>Resource Cost Stone</td>
+			<td>Build Time</td>
+			<td>Rank Points</td>
+		</tr><tr bgcolor="grey"><td>1</td>
+
+			<td>20</td>
+			<td>30</td>
+			<td>90</td>
+			<td>25sec</td>
+			<td>1</td>
+		</tr><tr><td>2</td>
+
+			<td>30</td>
+			<td>60</td>
+			<td>180</td>
+			<td>5min</td>
+			<td>2</td>
+		</tr><tr bgcolor="grey"><td>3</td>
+
+			<td>50</td>
+			<td>110</td>
+			<td>330</td>
+			<td>13min, 30sec</td>
+			<td>5</td>
+		</tr><tr><td>4</td>
+
+			<td>100</td>
+			<td>280</td>
+			<td>840</td>
+			<td>25min</td>
+			<td>10</td>
+		</tr><tr bgcolor="grey"><td>5</td>
+
+			<td>160</td>
+			<td>830</td>
+			<td>2490</td>
+			<td>40min</td>
+			<td>16</td>
+		</tr><tr><td>6</td>
+
+			<td>240</td>
+			<td>1930</td>
+			<td>5790</td>
+			<td>1hr</td>
+			<td>24</td>
+		</tr><tr bgcolor="grey"><td>7</td>
+
+			<td>350</td>
+			<td>3850</td>
+			<td>11550</td>
+			<td>1hr, 22min</td>
+			<td>34</td>
+		</tr><tr><td>8</td>
+
+			<td>500</td>
+			<td>6600</td>
+			<td>19800</td>
+			<td>1hr, 50min</td>
+			<td>46</td>
+		</tr><tr bgcolor="grey"><td>9</td>
+
+			<td>700</td>
+			<td>10500</td>
+			<td>31500</td>
+			<td>2hr, 25min</td>
+			<td>60</td>
+		</tr><tr><td>10</td>
+
+			<td>1000</td>
+			<td>16000</td>
+			<td>48000</td>
+			<td>3hr, 20min</td>
+			<td>80</td>
+		</tr></table>
+
+]]></r>).toString();
+
+if (typeof String.prototype.startsWith != 'function') {
+  String.prototype.startsWith = function (str){
+    if (str.length == 0)
+    {
+    return false
+    }
+    else
+    {    
+    return this.indexOf(str) == 0;
+    }
+  };
+}
+
+
+var buildings=  {
+                "CAMOUFLAGE TRAP":camouflage_trap,
+                "SHIPYARD":shipyard,
+                "WORKSHOP":workshop,
+                "BALLISTA TOWER":ballista_tower,
+                "ARCANE TRAP":arcane_trap,
+                "TEMPLAR TOWER":templar_tower,
+                "TRINSIC TEMPLE":trinsic_temple,
+                "CASTLE":castle,
+                "BARRICADE":barricade,
+                "MOONGLOW TOWER":moonglow_tower,
+                "GUARDIAN TOWER":guardian_tower,
+                "STABLE":stable,
+                "PITFALL TRAP":pitfall_trap,
+                "TRAINING GROUND":training_ground,
+                "BARRACKS":barracks,
+                "RANGER TOWER":ranger_tower,
+                "LOOKOUT TOWER":lookout_tower,
+                "CITY GUARD HOUSE":city_guard_house,
+                "CITY WALL":city_wall,
+                "FOUNDRY":foundry,
+                "MILL":mill,
+                "STONEMASON":stonemason,
+                "SAWMILL":sawmill,
+                "HARBOR":harbor,
+                "MARKETPLACE":marketplace,
+                "TOWNHOUSE":townhouse,
+                "IRON MINE":iron_mine,
+                "FARM":farm,
+                "HIDEOUT":hideout,
+                "QUARRY":quarry,
+                "WAREHOUSE":warehouse,
+                "COTTAGE":cottage,
+                "WOODCUTTER'S HUT":woodcutters_hut,
+                "TOWN HALL":town_hall
+                };
+
+//for (x in buildings){
+//document.write(x+" <br>");
+//}
+
+function testResults (form)
+{
+    var TestVar = form.inputbox.value;
+    var notfound = true;
+
+    if (TestVar.length == 0)
+    {
+        document.getElementById("content").innerHTML = "";
+    }
+    else
+    {
+        for (x in buildings)
+        {
+            if (x.startsWith(TestVar.toUpperCase()) == true) 
+            {
+            document.getElementById("content").innerHTML = buildings[x];
+            notfound = false;
+            break;
+            }
+        }
+        if (notfound == true)
+        {
+            for (x in buildings)
+            {
+                if (x.indexOf(TestVar.toUpperCase()) > 0) 
+                {
+                document.getElementById("content").innerHTML = buildings[x];
+                notfound = false;
+                break;
+                }
+            }
+        }
+        if (notfound == true)
+        {
+            document.getElementById("content").innerHTML = "";
+        }
+    }
+}
+
+</script>
+
+<p>Start typing the name of a building: </p>
+<FORM NAME="myform" ACTION="" METHOD="GET">
+<INPUT TYPE="text" NAME="inputbox" VALUE="" onkeyup="testResults(this.form)">
+</FORM>
+
+<div id="content"><div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

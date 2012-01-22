@@ -14,6 +14,23 @@ td {
 h2 {
     color:white;
 }
+
+div.left {
+    float:left;
+
+   
+    background-color:black;
+}
+div.right {
+    float:right;
+    width:900px;
+}
+
+input.bt {
+    background-color:white;
+    width:150;
+}
+
 </style>
 
 </head>
@@ -69,6 +86,8 @@ if (typeof String.prototype.startsWith != 'function') {
 }
 
 
+var bnames = ["CAMOUFLAGE TRAP","SHIPYARD","WORKSHOP","BALLISTA TOWER","ARCANE TRAP","TEMPLAR TOWER","TRINSIC TEMPLE","CASTLE","BARRICADE","MOONGLOW TOWER","GUARDIAN TOWER","STABLE","PITFALL TRAP","TRAINING GROUND","BARRACKS","RANGER TOWER","LOOKOUT TOWER","CITY GUARD HOUSE","CITY WALL","FOUNDRY","MILL","STONEMASON","SAWMILL","HARBOR","MARKETPLACE","TOWNHOUSE","IRON MINE","FARM","HIDEOUT","QUARRY","WAREHOUSE","COTTAGE","WOODCUTTER'S HUT","TOWN HALL"];
+
 var buildings=  {
                 "CAMOUFLAGE TRAP":camouflage_trap,
                 "SHIPYARD":shipyard,
@@ -112,7 +131,7 @@ var buildings=  {
 
 function testResults (form)
 {
-    var TestVar = form.inputbox.value;
+    var TestVar = form;
     var notfound = true;
 
     if (TestVar.length == 0)
@@ -149,15 +168,45 @@ function testResults (form)
     }
 }
 
+function showall ()
+{
+    if (document.getElementById("buttoncontent").innerHTML == "")
+    {
+        buttons = "";
+        bnames.sort();
+        for (i in bnames)
+        {
+            buttons += "<input class=\"bt\" name=\"" + removeSpaces(bnames[i])+ "\" type=\"button\" value=\"" + bnames[i]+ "\" onclick=\"testResults(this.form." + removeSpaces(bnames[i])+ ".value)\">";
+        }
+        document.getElementById("buttoncontent").innerHTML = "<form>"+buttons+"</form>";
+    }
+    else
+    {
+    document.getElementById("buttoncontent").innerHTML = "";
+    }
+}
+
+function removeSpaces(string) {
+ st = string.split(' ').join('');
+ return st.split('\'').join('');
+}
+
 </script>
 
-<p>Start typing the name of a building: </p>
+
+<div class="left">
+<input class="bt" style="background-color:orange" type="button" value="Buildings" onclick="showall()">
+<div id="buttoncontent"></div>
+</div>
+
+<div>
+<br><p>Start typing the name of a building: </p>
 <FORM NAME="myform" ACTION="" METHOD="GET">
-<INPUT TYPE="text" NAME="inputbox" VALUE="" onkeyup="testResults(this.form)">
+<INPUT TYPE="text" NAME="inputbox" VALUE="" onkeyup="testResults(this.form.inputbox.value)">
 </FORM>
 
-<div id="content"><div>
-
+<div id="content" class="right"></div>
+</div>
 
 
 

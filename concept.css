@@ -21,5 +21,6 @@ p {
 }
 
 #logo:hover {
-	background-color: lightgrey;
+	right: 7px;
+	top: 3px;
 }

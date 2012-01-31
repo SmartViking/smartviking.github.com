@@ -35,18 +35,21 @@
 	<style>
 	#bla {color:green}
 	.commands { color:green }
-	#dump, #bla, #input{
+	#dump, #bla, #input, #removed{
 	font-size: 14px;
 	font-family: cursor, courier;
 	font-weight: bold;
 	}
 	#input {
 	border: 0px solid #000000;
+	outline: none;
+	width: 800px;
 	background-color:black;
 	color:green;		
 	}
 	</style>
 	
+
 </head>
 
 <body style="background-color:black">
@@ -58,9 +61,7 @@
 
 		</div> <!-- end of header -->
 		
-		<p><div id="dump"></div>
-		
-		<span id="bla">$</span><input type="text" id="input">
+		<p id="enablejs"><span id="removed" style="color:blue;size=13px;">This website requires JavaScript (sorry 'bout that.)</span>
 		</p>
 
 	</div> <!-- End page div -->

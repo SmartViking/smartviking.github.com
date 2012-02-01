@@ -1,25 +1,43 @@
 $(document).ready( function() {
-	
+
+if (typeof String.prototype.startOf != 'function') {
+  String.prototype.startOf = function (str){
+    if (this.length == 0)
+    {
+    return true;
+    }
+    else
+    {
+    return str.indexOf(this) == 0;
+    }
+  };
+}
+
 	$("#enablejs").html(""+
 "<div id=\"dump\"></div>"+
-"		<span id=\"bla\">$ </span><input type=\"text\" id=\"input\">");
+"		<span id=\"bla\">$ </span><input type=\"text\" id=\"input\" >");
 
 	$("#input").focus();
 	
 	$(document).click( function() {
 		$("#input").focus();
 	});
+
 var commandHistory = [];
 var upTimes = 0;
 
 var help = ""+
 "Welcome to the WASH shell<br>"+
-"type \"commands\" to see a list of available commands."
+"type \"commands\" to see a list of available commands.";
 
 var commands = "<table style=\"border: 1px solid grey\"><tr><td>Commands:</td></tr>"+
 "<tr><td>help</td><td>: well, duh</td></tr>"+
 "<tr><td>commands</td><td>: show a list of available commands</td></tr>"+
-"<tr><td>clear</td><td>: clear the terminal screen</td></tr></table>"
+"<tr><td>clear</td><td>: clear the terminal screen</td></tr></table";
+
+var commandsArray = ["help","commands","clear"];
+var matchingCommands = [];
+tabWarningGiven = false;
 	
 	$("#input").keyup( function(event) {
 	if (event.keyCode == 13) {
@@ -61,7 +79,7 @@ var commands = "<table style=\"border: 1px solid grey\"><tr><td>Commands:</td></
 		}
 		else {upTimes--;}
 	}
-		else if (event.keyCode == 40) {
+	else if (event.keyCode == 40) {
 		upTimes--;
 		if (upTimes >= 0) {
 			if (!upTimes == 0) {
@@ -70,6 +88,49 @@ var commands = "<table style=\"border: 1px solid grey\"><tr><td>Commands:</td></
 			else {this.value = "";}
 		}
 		else {upTimes++;}
+	}
+	else if ((event.keyCode == 9) || (event.keyCode == 16)) {
+		event.preventDefault();
+		matchingCommands = [];
+		
+		for (i in commandsArray) {
+			if (this.value.startOf(commandsArray[i]) == true) {
+				matchingCommands.push(commandsArray[i]);
+				}
+		}
+		
+		if (matchingCommands.length == 1) {
+			this.value = matchingCommands[0];
+		}
+		else if (!matchingCommands.length == 0) {
+				
+			if (matchingCommands.length % 2 != 0) {
+				matchingCommands.push("")
+			}$ 
+		
+			var index = 0;
+			var table = "";
+			
+			if ((!tabWarningGiven) && (event.keyCode == 9)) {
+				tabWarningGiven = true;
+				table += "<span style=\"color:darkred;\"><br>Tips: if the tab key is irritating (because it keeps unfocusing), use SHIFT instead.</span>"
+			}
+			
+			table += '<table width="250" border="0">';
+			for (j=1;j<= (matchingCommands.length/2) ;j++) {
+				table += '<tr>';
+				for (i=1;i<=2;i++) {
+					table += '<td class="commands">' + matchingCommands[index]  + '</td>';
+					index++;
+				}
+				table += '</tr>';
+			}
+			table += '</table>';
+			
+			$("#dump").append("<span class=\"commands\">$ "+this.value+"</span>"+table)
+			window.location = "#input";
+			this.focus();
+		}
 	}
 	});
 	
